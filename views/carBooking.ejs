@@ -1,0 +1,58 @@
+<%- include('layoutLoggedIn.ejs'); %>
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" id="home">
+        <div class="container">
+
+          <div class="hero-content">
+            <h2 class="h1 hero-title">The easy way to takeover</h2>
+
+            <p class="hero-text">
+              Live in USA & CANADA!
+            </p>
+          </div>
+
+          <div class="hero-banner"></div>
+
+          <form method="post" action="/book-car" class="hero-form">
+
+            <div class="input-wrapper">
+              <label for="pickupLocation" class="input-label">Pickup Location</label>
+
+              <input type="text" name="pickupLocation" id="pickupLocation" class="input-field"
+                placeholder="planning For?">
+            </div>
+            <div class="input-wrapper">
+              <label for="carType" class="input-label">Car Type</label>
+              <select class="input-field" id="carType" name="carType">
+                <option>Sedan</option>
+                <option>Hatchback</option>
+                <option>SUV</option>      
+              </select>
+            </div>
+
+            <div class="input-wrapper">
+              <label for="pickupDateTime" class="input-label">Pickup Date & Time</label>
+
+              <input type="datetime-local" name="pickupDateTime" id="pickupDateTime" class="input-field" placeholder="When you want to go?">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="returnDateTime" class="input-label">Return Date & Time</label>
+
+              <input type="datetime-local" name="returnDateTime" id="returnDateTime" class="input-field" placeholder="When you are getting back?">
+            </div>
+
+            <button type="submit" class="btn">Book Now</button>
+
+          </form>
+
+        </div>
+      </section>
+    </article>
+  </main>

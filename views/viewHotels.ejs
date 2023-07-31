@@ -1,0 +1,46 @@
+<%- include('layoutLoggedIn.ejs'); %>
+<div class="container">
+
+  <div class="row mt-5">
+<!-- service section -->
+<section class="service_section layout_padding">
+    
+  <div class="container-fluid">
+    <div class="heading_container">
+      <h2>
+        Our Hotels
+      </h2>
+    </div>
+
+    <div class="service_container">
+      <% if (Hotels.length > 0) { %>
+        <% Hotels.forEach(hotel => { %>
+      <div class="box">
+        <h3><%= hotel.title %></h3>
+        <div class="img-box">
+          <img src="images/hotels/<%= hotel.title %>.jpg" alt="">
+        </div>
+        <div class="detail-box">
+          <h6><%= hotel.city %>, <%= hotel.country %></h6>
+          <h8>Price: $ <%= hotel.price %></h8>
+          <button type="button" style="background-color: #d8bf36;
+          border-radius: 50px;
+          width: 150px;
+          padding: 10px;
+          margin-left: 20%;
+          margin-right: 20%;
+          margin-top: 10px;" 
+          onclick="window.location.href = '/book-hotel?id=<%= hotel.id %>'">Click To Book</button>
+        </div>
+       
+      </div>
+      <% }) %>
+      <% } else { %>
+        <h5>No Hotel found&nbsp;</h5>
+        <% } %>
+    </div>
+</div>
+</section>
+    </div>
+  </div>
+  

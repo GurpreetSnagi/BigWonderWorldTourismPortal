@@ -1,0 +1,40 @@
+<% if (tour) { %>
+    <%- include('layoutLoggedIn.ejs'); %>
+    <main>
+      <article>
+  
+        <!-- 
+          - #HERO
+        -->
+  
+        <section class="section hero" id="home">
+          <div class="container">
+            <div class="hero-content">
+              <h2 class="h1 hero-title"><%= tour.title %></h2>
+              <p class="hero-text">Location: <%= tour.city %>, <%= tour.country %></p>
+              <p class="hero-text">Type: <%= tour.type %> </p>
+              <p class="hero-text"><%= tour.description %></p>
+              <p class="hero-text">Price: <%= tour.price %></p>
+            </div>
+  
+            <div class="hotel-banner" style="background-image: url('images/tours/<%= tour.title %>.jpg');" ></div>
+  
+            <form method="post" action="/book-tour" class="hero-form" style="grid-template-columns: 1fr 1fr 1fr;">
+              <input type="hidden" name="tourId" id="tourId" value="<%= tour.id %>">
+              <div class="input-wrapper">
+                <label for="departure" class="input-label">Daparting On:</label>
+  
+                <input type="date" name="departure" id="departure" class="input-field">
+              </div>
+  
+               <button type="submit" class="btn">Book Now</button>
+  
+            </form>
+  
+          </div>
+        </section>
+      </article>
+    </main>          
+<% } %>
+</div>
+</div>

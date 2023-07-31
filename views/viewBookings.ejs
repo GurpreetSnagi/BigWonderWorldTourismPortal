@@ -1,0 +1,65 @@
+<%- include('layoutLoggedIn.ejs'); %><div class="container">
+  <div class="mt-4"><h2>My Bookings</h1></div>
+  <div class="row mt-5">
+
+    <% if (tourBookings.length > 0) { %>
+      <% tourBookings.forEach(tour => { %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <H3 style="text-align: center;">Tour</H3>
+            <div class="card-body">
+              <h5 class="card-title"><%= tour.tourtitle %></h5>
+              <p class="card-text"><%= tour.tourtype %> , <%= tour.tourdescription %></p>
+              <p class="card-text"><%= tour.tourcity %> , <%= tour.tourcountry %></p>
+              <p class="card-text">Departing on: <%= tour.departure %></p>
+              <p class="card-text">Booked on: <%= tour.createdAt.toDateString() %> At Price: <%= tour.tourprice %></p>
+              <div class="d-flex justify-content-between align-items-center">
+            </div>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+    <% } %>
+
+    
+    <% if (hotelBookings.length > 0) { %>
+      <% hotelBookings.forEach(hotel => { %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <H3 style="text-align: center;">Hotel</H3>
+            <div class="card-body">
+              <h5 class="card-title"><%= hotel.hoteltitle %></h5>
+              <p class="card-text"><%= hotel.hoteltype %> , <%= hotel.hoteldescription %></p>
+              <p class="card-text"><%= hotel.hotelcity %> , <%= hotel.hotelcountry %></p>
+              <p class="card-text">From: <%= hotel.checkIn %> To: <%= hotel.checkOut %></p>
+              <p class="card-text">Booked on: <%= hotel.createdAt.toDateString() %> At Price: <%= hotel.hotelprice %></p>
+              <div class="d-flex justify-content-between align-items-center">
+            </div>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+    <% } %>
+
+    <% if (carBookings.length > 0) { %>
+      <% carBookings.forEach(car => { %>
+        <div class="col-md-4">
+          
+          <div class="card mb-4 shadow-sm">
+            <H3 style="text-align: center;">Car</H3>
+            <div class="card-body">
+              <h5 class="card-title">Source Station : <%= car.pickupLocation %></h5>
+              <p class="card-text">Car type: <%= car.carType %></p>
+              <p class="card-text">Pickup: <%= car.pickupDateTime %></p>
+              <p class="card-text">Return: <%= car.returnDateTime %></p>
+              <p class="card-text">Booked on: <%= car.createdAt.toDateString() %></p>
+              <div class="d-flex justify-content-between align-items-center">
+            </div>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+    <% } %>
+
+  </div>
+</div>

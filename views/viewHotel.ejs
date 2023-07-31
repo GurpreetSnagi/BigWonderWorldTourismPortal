@@ -1,0 +1,45 @@
+        <% if (hotel) { %>
+          <%- include('layoutLoggedIn.ejs'); %>
+          <main>
+            <article>
+        
+              <!-- 
+                - #HERO
+              -->
+        
+              <section class="section hero" id="home">
+                <div class="container">
+                  <div class="hero-content">
+                    <h2 class="h1 hero-title"><%= hotel.title %></h2>
+                    <p class="hero-text">Location: <%= hotel.city %>, <%= hotel.country %></p>
+                    <p class="hero-text">Type: <%= hotel.type %>  <%= hotel.description %></p>
+                    <p class="hero-text">Price: <%= hotel.price %></p>
+                  </div>
+        
+                  <div class="hotel-banner" style="background-image: url('images/hotels/<%= hotel.title %>.jpg');" ></div>
+        
+                  <form method="post" action="/book-hotel" class="hero-form" style="grid-template-columns: 1fr 1fr 1fr;">
+                    <input type="hidden" name="hotelId" id="hotelId" value="<%= hotel.id %>">
+                    <div class="input-wrapper">
+                      <label for="checkin" class="input-label">Check-In</label>
+        
+                      <input type="date" name="checkin" id="checkin" class="input-field">
+                    </div>
+        
+                    <div class="input-wrapper">
+                      <label for="checkout" class="input-label">Check-Out</label>
+        
+                      <input type="date" name="checkout" id="checkout" class="input-field" >
+                    </div>
+        
+                    <button type="submit" class="btn">Book Now</button>
+        
+                  </form>
+        
+                </div>
+              </section>
+            </article>
+          </main>          
+      <% } %>
+    </div>
+  </div>

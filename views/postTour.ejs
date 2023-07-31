@@ -1,0 +1,42 @@
+<%- include('layoutLoggedIn.ejs'); %>
+<div class="col-md-6 offset-md-3 card mt-5">
+    <form method="post" action="/create-tour">
+        <div class="form-group mt-5">
+          <label for="tour-title">Tour Name</label>
+          <input type="text" class="form-control" id="tour-title" name="title" placeholder="Enter tour name" required>
+        </div>
+        <div class="form-group">
+            <label for="tour-title">City Name</label>
+            <input type="text" class="form-control" id="companyName" name="city" placeholder="City Name" required>
+          </div>
+        <div class="form-group">
+          <label for="job-description">Tour Description</label>
+          <textarea class="form-control" id="job-description" rows="6" name="description" placeholder="Enter tour description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="job-location">Tour Country</label>
+          <input type="text" class="form-control" id="job-location" name="country" placeholder="Enter tour Country" required>
+        </div>
+        <div class="form-group">
+          <label for="job-type">Tour Type</label>
+          <select class="form-control" id="job-type" name="type">
+            <option>Honeymoon</option>
+            <option>Family</option>
+            <option>Solo</option>      
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="job-salary">Price</label>
+          <input type="text" class="form-control" id="job-salary" name="price" placeholder="Enter Price">
+        </div>
+
+        <button type="submit" class="btn btn-primary loginButton">Submit</button>
+      </form>
+      <div class="mt-3"></div>
+
+    </div>
+    <div class="mt-5"></div>
+    <div class="mt-5"></div>
+
+</body>
+</html>

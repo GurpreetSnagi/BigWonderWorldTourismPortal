@@ -1,0 +1,44 @@
+<%- include('layoutLoggedIn.ejs'); %>
+<div class="container">
+    <div class="mt-4"><h2>My Postings</h1></div>
+    <div class="row mt-5">
+      
+      <% if (hotelPostings.length > 0) { %>
+        <% hotelPostings.forEach(hotelPosting => { %>
+          <div class="col-md-4">
+            <H3>Hotel</H3>
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title"><%= hotelPosting.title %></h5>
+                <p class="card-text"><%= hotelPosting.city %></p>
+                <p class="card-text"><%= hotelPosting.price %></p>
+                <p class="card-text">Posted on: <%= hotelPosting.createdAt.toDateString() %></p>
+                <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+      <% } %>
+
+      <% if (carPostings.length > 0) { %>
+        <% carPostings.forEach(carPosting => { %>
+          <div class="col-md-4">
+            <H3>Car</H3>
+            <div class="card mb-4 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title"><%= carPosting.make %> - <%= carPosting.name %></h5>
+                <p class="card-text">Type: <%= carPosting.type %></p>
+                <p class="card-text">Type: <%= carPosting.price %></p>
+                <p class="card-text">Posted on: <%= carPosting.createdAt.toDateString() %></p>
+                <div class="d-flex justify-content-between align-items-center">
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }) %>
+      <% } %>
+ 
+    </div>
+</div>
+  

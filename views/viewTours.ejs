@@ -1,0 +1,46 @@
+<%- include('layoutLoggedIn.ejs'); %>
+<div class="container">
+
+  <div class="row mt-5">
+<!-- service section -->
+<section class="service_section layout_padding">
+    
+  <div class="container-fluid">
+    <div class="heading_container">
+      <h2>
+        Our Tour Packages
+      </h2>
+    </div>
+
+    <div class="service_container">
+      <% if (Tours.length > 0) { %>
+        <% Tours.forEach(tour => { %>
+      <div class="box">
+        <h3><%= tour.title %></h3>
+        <div class="img-box">
+          <img src="images/tours/<%= tour.title %>.jpg" alt="">
+        </div>
+        <div class="detail-box">
+          <h6><%= tour.city %>, <%= tour.country %></h6>
+          <h8>Price: $ <%= tour.price %></h8>
+          <button type="button" style="background-color: #d8bf36;
+          border-radius: 50px;
+          width: 150px;
+          padding: 10px;
+          margin-left: 20%;
+          margin-right: 20%;
+          margin-top: 10px;" 
+          onclick="window.location.href = '/book-tour?id=<%= tour.id %>'">Click To Book</button>
+        </div>
+       
+      </div>
+      <% }) %>
+      <% } else { %>
+        <h5>No Tour found&nbsp;</h5>
+        <% } %>
+    </div>
+</div>
+</section>
+    </div>
+  </div>
+  
